@@ -13,6 +13,7 @@ $(document).ready(function(){
         console.log(search);
 
         getMovies(search);
+        
     })
 })
 
@@ -20,9 +21,11 @@ $(document).ready(function(){
 function getMovies(searchParam) {
     //For Search param: http://www.omdbapi.com/?s=home&apikey=576f5cb7
     //For title param: http://www.omdbapi.com/?i=tt3896198&apikey=576f5cb7
-    $.getJSON('http://www.omdbapi.com/?s='+ searchParam +'&apikey=576f5cb7', function(data){
+    //Needs minimum of 3 letters in searchparam
+    //Pagination feature. 
+    $.getJSON('http://www.omdbapi.com/?apikey=576f5cb7&s='+ searchParam /* &page=1 */, function(data){
         //console.log(data.Search[0]);
-        //console.log(data.Search);
+        console.log(data.Search);
         let movieList = data.Search;
 
         $('#movie-list').html('');
@@ -32,21 +35,33 @@ function getMovies(searchParam) {
     
             $('#movie-list').append(
                 `
-                <div class="col-md-4 mb-5">
+                <div class="col-md-4 mb-5 movie-grid-item">
                     <div class="card" style="width: 18rem;">
-                        <img src="#" class="card-img-top">
+                        <img src="${movieList[i].Poster}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">${movieList[i].Title}</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">View Show Times</a>
+                            <h6 class="card-title">${movieList[i].Year}</h6>
+                            <a href="https://www.imdb.com/title/${movieList[i].imdbID}/" class="card-link" target="_blank">More Info</a>
+                            <p class="card-text"></p>
+
+                            <button type="button" class="btn btn-primary" id="show-time-btn">View Show Times</button>
                         </div>
                     </div>
                 </div>
                 `
             )
         }
+        //Use maps API
+        showTime();
     })  
     
+}
+
+function showTime() {
+    $('#show-time-btn').on('click', function(e){
+        e.preventDefault();
+        //alert('It worked');
+    }) 
 }
 
 

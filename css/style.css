@@ -4,13 +4,20 @@
 
 .search-bar {
     padding: 4px;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
-.movie-grid-item {
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 300px;
+    margin-bottom: 50px;
     
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.card-body {
-    
-}

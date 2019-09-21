@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 
     <!--Jquery Minified-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -62,7 +62,7 @@
         <section class="search-bar">
             <form id="search-form">
                 <div class="form-group bg-white border rounded d-flex">
-                    <input id="movie-name" class="border-white form-control form-control-lg" type="text" name="address" autocomplete="off">
+                    <input id="movie-name" class="border-white form-control form-control-lg" type="text" name="address" autocomplete="off" placeholder="eg. Iron Man">
                     <button class="btn btn-primary btn-lg border-white" type="submit">Search</button>
                 </div>
             </form>
@@ -80,11 +80,13 @@
         </div>
     </div>
 
-    <!--Custom Js-->
-    <script src="app.js"></script>
+    
 
     <!--Google Maps API-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdG7fSABnnwrNt8smOCdLAsyedk5lRP2A&callback=initMap&libraries=places&callback=initMap" async defer></script>
+
+    <!--Custom Js-->
+    <script src="app.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
